@@ -4,9 +4,10 @@ TODAY=`date --date="-2days " +"%Y-%m-%d"`
 echo "[DEBUG] Date: $TODAY"
 
 FILENAME="$TODAY.zip"
-echo "[DEBUG] Filename: $FILENAME"
+FILENAME_NO_WHITESPACE="$(echo -e "${FILENAME}" | tr -d '[:space:]')"
+echo "[DEBUG] Filename: $FILENAME_NO_WHITESPACE"
 
-FILENAMEB64=`echo $FILENAME | base64`
+FILENAMEB64=`echo $FILENAME_NO_WHITESPACE | base64`
 echo "[DEBUG] FilenameB64: $FILENAMEB64"
 
 DIR="./"
