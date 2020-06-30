@@ -1,9 +1,16 @@
 #!/bin/bash
 
 TODAY=`date --date="-1day" +"%Y-%m-%d"`
+echo "[DEBUG] Date: $TODAY"
+
 FILENAME=`echo "$TODAY.zip" | base64`
+echo "[DEBUG] Filename: $FILENAME"
+
 DIR="./"
+
 URL="https://whoisds.com/whois-database/newly-registered-domains/$FILENAME/nrd"
+echo "[DEBUG] Downloading $URL"
+
 TMP=`mktemp ./XXXXXX.zip`
 LOG=`mktemp ./XXXXXX.log`
 
