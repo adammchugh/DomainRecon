@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TODAY=`date --date="-1day" +"%Y-%m-%d"`
+TODAY=`date --date="-2day" +"%Y-%m-%d"`
 echo "[DEBUG] Date: $TODAY"
 
 FILENAME=`echo "$TODAY.zip" | base64`
