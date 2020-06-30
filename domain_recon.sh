@@ -4,8 +4,8 @@ TODAY=`date --date="-1day" +"%Y-%m-%d"`
 FILENAME=`echo "$TODAY.zip" | base64`
 DIR="./"
 URL="https://whoisds.com/whois-database/newly-registered-domains/$FILENAME/nrd"
-TMP=`mktemp ./domain_recon.zip`
-LOG=`mktemp ./domain_recon.log`
+TMP=`mktemp ./XXXXXX.zip`
+LOG=`mktemp ./XXXXXX.log`
 
 [ -d "$DIR" ] || mkdir -p $DIR
 [ -r "$DIR/$TODAY.txt" ] && rm "$DIR/$TODAY.txt"
