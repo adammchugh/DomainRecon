@@ -17,7 +17,7 @@ LOG=`mktemp ./XXXXXX.log`
 [ -d "$DIR" ] || mkdir -p $DIR
 [ -r "$DIR/$TODAY.txt" ] && rm "$DIR/$TODAY.txt"
 
-wget -o $LOG -O $TMP $URL
+wget -o $LOG -O domains.zip $URL
 RC=$?
 if [ "$RC" != "0" ]; then
   echo "Cannot fetch URL"
