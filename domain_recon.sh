@@ -3,8 +3,11 @@
 TODAY=`date --date="-2days " +"%Y-%m-%d"`
 echo "[DEBUG] Date: $TODAY"
 
-FILENAME=`echo "$TODAY.zip" | base64`
+FILENAME="$TODAY.zip"
 echo "[DEBUG] Filename: $FILENAME"
+
+FILENAMEB64=`echo $FILENAME | base64`
+echo "[DEBUG] FilenameB64: $FILENAMEB64"
 
 DIR="./"
 
